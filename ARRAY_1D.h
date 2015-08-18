@@ -60,4 +60,20 @@ public:
 		for(int i = 0; i < i_res; i++) val[i] = arr_.val[i];
 	}
 
+	void AssignAllValue(const T& value)
+	{
+		for(int i = 0; i < i_res; i++) val[i] = value;
+	}
+
+public:
+	void Print(const char* filename) const
+	{
+		std::ofstream fout;
+		fout.open(filename);
+		for(int i = i_start; i <= i_end; i++)
+		{
+			fout<<(*this)(i)<<std::endl;
+		}
+		fout.close();
+	}
 };
